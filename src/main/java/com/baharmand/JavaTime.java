@@ -49,5 +49,45 @@ public class JavaTime {
         System.out.println("Elapsed Months: " + months);
         System.out.println("Elapsed Days: " + days);
 
+        //E8.
+        Period customPeriod = Period.of(4, 7, 29);
+        System.out.println(todayDate.plus(customPeriod));
+
+        //E9.
+        LocalTime currentTime = LocalTime.now();
+
+        //E10.
+        System.out.println("Current time is " + currentTime.getNano() + " nano seconds.");
+
+        //E11.
+        LocalTime sleepTime = LocalTime.parse("21:59:59");
+
+        //E12.
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ISO_LOCAL_TIME;
+        System.out.println("Sleep time is " + sleepTime.format(timeFormatter) + ".");
+
+        //E13.
+        LocalDateTime dateTime= LocalDateTime.of(2018, 4, 5, 10, 0);
+        System.out.println(dateTime);
+
+        //E14.
+        DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("eeee dd MM y 'T' hh:mm:ss", new Locale("sv", "SE"));
+        System.out.println(dateTime.format(dateTimeFormat));
+
+        //E15.
+        LocalDate date = LocalDate.of(2023, 7, 4);
+        LocalTime time = LocalTime.of(14, 30);
+
+        System.out.println("LocalDateTime: " + date.atTime(time));
+
+        //E16.
+        LocalDateTime dateeTimee = LocalDateTime.of(2023, 7, 4, 14, 30);
+
+        LocalDate datee = dateTime.toLocalDate();
+        LocalTime timee = dateTime.toLocalTime();
+
+        System.out.println("LocalDate: " + datee);
+        System.out.println("LocalTime: " + timee);
+
     }
 }
